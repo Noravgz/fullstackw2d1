@@ -10,3 +10,10 @@
     <a href="/gossips/new/">Créer un potins</a>
   </body>
 </html>
+
+<% gossips.each do |gossip| %>
+  <p>
+    <%= gossip.author %><br/>
+    <%= gossip.content %>
+  </p>
+<% end %>

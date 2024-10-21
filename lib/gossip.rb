@@ -21,5 +21,11 @@ class Gossip
     end
     
     return all_gossip
+end
+
+  def self.find(id)
+    # On lit tous les secrets dans un fichier CSV
+    gossips = CSV.read('db/gossips.csv')
+    gossips[id - 1]  # On retourne le secret qui correspond à ce numéro
   end
 end

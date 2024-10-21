@@ -2,7 +2,7 @@ require 'gossip'
 
 class ApplicationController < Sinatra::Base
     get '/' do
-      erb :index
+      erb :index, locals: {gossips: Gossip.all}
     end
   end
 
@@ -31,4 +31,13 @@ class ApplicationController < Sinatra::Base
 puts "Nouveau gossip ajouté : #{author} - #{content}"
     redirect '/'
   end
+end
+
+get '/gossips/:id' do
+  # "id", c'est le numéro du secret que l'on veut
+  id = params['id'].to_i  # On transforme "id" en nombre
+  @gossip = Gossip.find(id)  # On va chercher le secret N°id
+
+  # Ensuite, on montre la page qui s'appelle "show"
+  erb :show
 end
