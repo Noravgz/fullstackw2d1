@@ -1,0 +1,11 @@
+source "https://rubygems.org/"
+ruby '3.2.2'
+gem 'rspec'
+gem 'pry'
+gem 'rubocop'
+gem 'dotenv'
+gem 'csv'
+gem 'http'
+gem 'sinatra'
+gem 'rackup'
+gem 'rerun'
